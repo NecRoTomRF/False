@@ -1,0 +1,14 @@
+{% extends "products/layout.html" %}
+
+{% block title %}Список продуктов{% endblock  %}
+
+{% block content %}
+    {% for el in courses %}
+        <div>
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.description }}</p>
+            <p>Цена: {{ el.price }} тугриков.</p>
+            <a href="{% url 'course-detail' el.id %}">Перейти на страницу продукта</a>
+        </div>
+    {% endfor %}
+{% endblock  %}
